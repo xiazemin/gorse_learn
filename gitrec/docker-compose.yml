@@ -68,7 +68,7 @@ services:
     restart: unless-stopped
     environment:
       GORSE_ADDRESS: http://server:8087
-      GITHUB_ACCESS_TOKEN: 
+      GITHUB_ACCESS_TOKEN:GITHUB_ACCESS_TOKEN 
 
   web:
     build: .
@@ -79,9 +79,9 @@ services:
       GORSE_ADDRESS: http://server:8087
       BROKER_ADDRESS: pyamqp://gorse:gorse_pass@rabbitmq/
       OAUTHLIB_INSECURE_TRANSPORT: "true"
-      GITHUB_OAUTH_CLIENT_ID: Iv1.
-      GITHUB_OAUTH_CLIENT_SECRET: 
-      SECRET_KEY: 
+      GITHUB_OAUTH_CLIENT_ID: GITHUB_OAUTH_CLIENT_ID
+      GITHUB_OAUTH_CLIENT_SECRET: GITHUB_OAUTH_CLIENT_SECRET
+      SECRET_KEY: SECRET_KEY
 
 volumes:
   data:
