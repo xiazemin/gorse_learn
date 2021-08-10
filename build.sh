@@ -16,13 +16,14 @@ docker build -t gorse_worker -f gorse-worker/Dockerfile .
 
 docker pull redis
 docker pull mysql:5.7
+#docker pull mysql/mysql-server:5.7
 
 docker-compose up -d
 
 docker ps
-docker exec -it 2549622bafda /bin/bash
+docker exec -it 82c5660e31d5 /bin/bash
 
-docker cp ./gitrec/init/github.sql  2549622bafda:/var
+docker cp ./gitrec/init/github.sql  82c5660e31d5:/var
 
 mysql -h 127.0.0.1 -u gorse -pgorse_pass gorse < /var/github.sql
 
